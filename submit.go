@@ -196,7 +196,7 @@ func initSubmit() {
 						if s.GetImType() == "qq" {
 							xdd(value, fmt.Sprint(s.GetUserID()))
 						} else {
-							s.Reply("请在30秒内输入QQ号：")
+							s.Reply("请输入“QQ”号或输入“1”跳过，30秒后自动跳过...")
 							s.Await(s, func(s core.Sender) interface{} {
 								xdd(value, s.GetContent())
 								return "OK"
