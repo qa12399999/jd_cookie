@@ -299,5 +299,5 @@ func a叉哦叉哦(pt_pin, class, content string) {
 	if u.Note == "" {
 		u.Note = u.ID
 	}
-	Notify(pt_pin, class+"")
+	Notify(pt_pin, class+"通知("+u.Note+")：\n"+content+"\n\n通知没有用？请对我说“关闭"+class+"通知”或“管理”，根据提示进行关闭。")
 }
