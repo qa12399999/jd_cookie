@@ -287,13 +287,13 @@ func a叉哦叉哦(pt_pin, class, content string) {
 		ID: pt_pin,
 	}
 	jdNotify.First(u)
-	if u.DreamFactory && class == "京喜工厂\n1、京喜APP->我的->京喜工厂,完成是商品红包,用于购买指定商品(不兑换会过期)\n2、对我发送“管理”，可根据提示进行关闭通知。\n\n账号：" {
+	if u.DreamFactory && class == "京喜工厂" {
 		return
 	}
-	if u.Fruit && class == "东东农场\n1、京东APP->我的->东东农场,完成是京东红包,可以用于京东APP的任意商品（选取4级商品种植成功后可兑换50元红包）\n2、对我发送“管理”，可根据提示进行关闭通知。\n\n账号：" {
+	if u.Fruit && class == "东东农场" {
 		return
 	}
-	if u.Pet && class == "东东萌宠\n1、京东APP->我的->东东萌宠,完成是京东红包,可以用于京东APP的任意商品\n2、对我发送“管理”，可根据提示进行关闭通知。\n\n账号：" {
+	if u.Pet && class == "东东萌宠" {
 		return
 	}
 	if u.Note == "" {
