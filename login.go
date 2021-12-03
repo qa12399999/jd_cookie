@@ -199,12 +199,12 @@ func initLogin() {
 						if s.GetImType() == "wxmp" {
 							rt := "八九不离十登录成功啦，10秒后对我说“查询”以确认登录成功。"
 							if jd_cookie.Get("xdd_url") != "" {
-								rt += "此外，你可以在30秒内输入QQ号："
+								rt += "请输入“QQ”号或输入“1”跳过，30秒后自动跳过..."
 							}
 							return rt
 						}
 						return nil
-					}, time.Second*60, func(_ error) {
+					}, time.Second*180, func(_ error) {
 						s.Reply("叼毛，你超时啦～")
 						cancel = true
 					})
@@ -424,7 +424,7 @@ func initLogin() {
 								} else {
 									rt := "八九不离十登录成功啦，60秒后对我说“查询”已确认登录成功。"
 									if jd_cookie.Get("xdd_url") != "" {
-										rt += "此外，你可以在30秒内输入QQ号："
+										rt += "请输入“QQ”号或输入“1”跳过，30秒后自动跳过..."
 									}
 									s.Reply(rt)
 								}
