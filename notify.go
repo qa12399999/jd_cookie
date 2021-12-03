@@ -100,7 +100,7 @@ func initNotify() {
 	}()
 	core.AddCommand("", []core.Function{
 		{
-			Rules: []string{`raw ^任务通知$`},
+			Rules: []string{`raw ^通知$`},
 			Cron:  jd_cookie.Get("task_Notify", "2 7,13,19 * * *"),
 			Admin: true,
 			Handle: func(_ core.Sender) interface{} {
