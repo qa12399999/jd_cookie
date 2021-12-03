@@ -146,7 +146,7 @@ func initNotify() {
 			},
 		},
 		{
-			Rules: []string{`raw ^账号管理$`},
+			Rules: []string{`raw ^管理$`},
 			Handle: func(s core.Sender) interface{} {
 				if groupCode := jd_cookie.Get("groupCode"); !s.IsAdmin() && groupCode != "" && s.GetChatID() != 0 && !strings.Contains(groupCode, fmt.Sprint(s.GetChatID())) {
 					s.Continue()
@@ -287,17 +287,17 @@ func a叉哦叉哦(pt_pin, class, content string) {
 		ID: pt_pin,
 	}
 	jdNotify.First(u)
-	if u.DreamFactory && class == "京喜工厂" {
+	if u.DreamFactory && class == "京喜工厂\n1、京喜APP->我的->京喜工厂,完成是商品红包,用于购买指定商品(不兑换会过期)\n2、对我发送“管理”，可根据提示进行关闭通知。\n\n账号：" {
 		return
 	}
-	if u.Fruit && class == "东东农场" {
+	if u.Fruit && class == "东东农场\n1、京东APP->我的->东东农场,完成是京东红包,可以用于京东APP的任意商品（选取4级商品种植成功后可兑换50元红包）\n2、对我发送“管理”，可根据提示进行关闭通知。\n\n账号：" {
 		return
 	}
-	if u.Pet && class == "东东萌宠" {
+	if u.Pet && class == "东东萌宠\n1、京东APP->我的->东东萌宠,完成是京东红包,可以用于京东APP的任意商品\n2、对我发送“管理”，可根据提示进行关闭通知。\n\n账号：" {
 		return
 	}
 	if u.Note == "" {
 		u.Note = u.ID
 	}
-	Notify(pt_pin, class+"通知("+u.Note+")：\n"+content+"\n\n通知没有用？请对我说“关闭"+class+"通知”或“账号管理”，根据提示进行关闭。")
+	Notify(pt_pin, class+"")
 }
